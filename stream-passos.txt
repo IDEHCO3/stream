@@ -1,0 +1,5 @@
+Após carregar o stream(/desenv/idehco3/stream)- para monitorar twitter por exemplo. Ver e carregar o ambiente virutal antes de executar os passos
+1. Para cada item abaixo abrir um terminal em /desenv/idehco3/stream e executar o comando. 
+1.1 redis-server 
+1.2 celery -A stream worker -l info
+1.3 celery -A stream beat -l info

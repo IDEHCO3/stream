@@ -15,6 +15,12 @@ import os
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+PROJECT_ROOT = os.path.abspath(os.path.dirname(__file__))
+
+STATICFILES_DIRS = [
+    os.path.join(PROJECT_ROOT, "static"),
+]
+
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
@@ -25,7 +31,7 @@ SECRET_KEY = 'ya!mb@n+w#wuy@a%7_#aooe_#^46xdjmm)*$hwjlxwf+53&bd%'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['']
 
 
 # Application definition
@@ -38,13 +44,16 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.gis',
+    'corsheaders',
     'rest_framework',
     'rest_framework_gis',
-    'twitter_stream'
+    'twitter_stream_rest',
+    'twitter_stream_view',
 )
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -115,11 +124,17 @@ USE_L10N = True
 
 USE_TZ = True
 
+# CORS HEAD
+CORS_ORIGIN_ALLOW_ALL = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
+
+TEMPLATE_DIRS = (
+    os.path.join(BASE_DIR,  'templates'),
+)
 
 AUTH_USER_MODEL = 'auth.User'
 
@@ -129,4 +144,4 @@ CELERY_RESULT_BACKEND = 'redis://localhost:6379'
 CELERY_ACCEPT_CONTENT = ['application/json']
 CELERY_TASK_SERIALIZER = 'json'
 CELERY_RESULT_SERIALIZER = 'json'
-CELERY_TIMEZONE = 'Africa/Nairobi'
+CELERY_TIMEZONE = 'America/Sao_Paulo'

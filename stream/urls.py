@@ -18,7 +18,8 @@ from django.contrib import admin
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^streams/twitter/', include('twitter_stream.urls', namespace='twitter_stream')),
+    url(r'^streams/twitter/', include('twitter_stream_rest.urls', namespace='twitter_stream_rest')),
+    url(r'^view/streams/twitter/', include('twitter_stream_view.urls', namespace='twitter_stream_view')),
 ]
 
 urlpatterns += [
