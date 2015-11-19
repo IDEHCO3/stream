@@ -2,7 +2,7 @@ from django.conf.urls import include, patterns, url
 
 from rest_framework.urlpatterns import format_suffix_patterns
 
-from twitter_stream_rest import views
+from twitter_stream_api import views
 
 
 urlpatterns = format_suffix_patterns([

@@ -2,17 +2,19 @@
 from __future__ import unicode_literals
 
 from django.db import migrations, models
+import django.contrib.gis.db.models.fields
 
 
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('twitter_stream_rest', '0003_auto_20151111_1908'),
+        ('twitter_stream_api', '0004_remove_geotwitter_geom'),
     ]
 
     operations = [
-        migrations.RemoveField(
+        migrations.AddField(
             model_name='geotwitter',
             name='geom',
+            field=django.contrib.gis.db.models.fields.PointField(blank=True, srid=4326, null=True),
         ),
     ]

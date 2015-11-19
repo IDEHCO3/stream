@@ -1,6 +1,6 @@
 from django.contrib.gis.geos import GEOSGeometry
 from twython import Twython
-from twitter_stream_rest.models import MonitorTwitter, GeoTwitter
+from twitter_stream_api.models import MonitorTwitter, GeoTwitter
 import datetime
 
 

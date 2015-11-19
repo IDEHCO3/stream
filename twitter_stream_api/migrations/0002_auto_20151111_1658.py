@@ -7,7 +7,7 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('twitter_stream_rest', '0001_initial'),
+        ('twitter_stream_api', '0001_initial'),
     ]
 
     operations = [

@@ -9,7 +9,7 @@ from django.conf import settings
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('twitter_stream_rest', '0002_auto_20151111_1658'),
+        ('twitter_stream_api', '0002_auto_20151111_1658'),
     ]
 
     operations = [

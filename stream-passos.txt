@@ -1,5 +1,10 @@
-Após carregar o stream(/desenv/idehco3/stream)- para monitorar twitter por exemplo. Ver e carregar o ambiente virutal antes de executar os passos
+Para monitorar twitter:
+A partir do diretório /desenv/idehco3/stream.  Antes de executar os comandos abaixos,
+carregar o ambiente virutal exemplo: .../desenv/idehco3/stream/workon env_stream. 
 1. Para cada item abaixo abrir um terminal em /desenv/idehco3/stream e executar o comando. 
-1.1 redis-server 
-1.2 celery -A stream worker -l info
+1.1 redis-server
+1.2 celery -A stream worker -l info 
 1.3 celery -A stream beat -l info
+
+exemplo de consulta: 
+http://127.0.0.1:8003/streams/twitter/rogerio/monitors-twitters/geoteste/geotwitters/

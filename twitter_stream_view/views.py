@@ -2,7 +2,7 @@ from django.shortcuts import render
 
 
 from django.views.generic import  TemplateView
-#from twitter_stream_rest.models import MonitorTwitter, GeoTwitter, AccountTwitter
+#from twitter_stream_api.models import MonitorTwitter, GeoTwitter, AccountTwitter
 
 # Create your views here.
 class MonitorTwitterView(TemplateView):

@@ -47,7 +47,7 @@ INSTALLED_APPS = (
     'corsheaders',
     'rest_framework',
     'rest_framework_gis',
-    'twitter_stream_rest',
+    'twitter_stream_api',
     'twitter_stream_view',
 )
 
@@ -68,7 +68,7 @@ ROOT_URLCONF = 'stream.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR,  'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -103,7 +103,7 @@ password_database = os.environ['PASSWORD_DATABASE']
 DATABASES = {
     'default': {
          'ENGINE': 'django.contrib.gis.db.backends.postgis',
-         'HOST': ip_sgbd,
+         'HOST': '172.17.0.2',
          'NAME': database_name,
          'USER': user_name_database,
          'PASSWORD': password_database
@@ -132,9 +132,7 @@ CORS_ORIGIN_ALLOW_ALL = True
 
 STATIC_URL = '/static/'
 
-TEMPLATE_DIRS = (
-    os.path.join(BASE_DIR,  'templates'),
-)
+
 
 AUTH_USER_MODEL = 'auth.User'
 

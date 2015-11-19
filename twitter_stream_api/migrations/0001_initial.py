@@ -53,6 +53,6 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='geotwitter',
             name='monitor_twitter',
-            field=models.ForeignKey(to='twitter_stream_rest.MonitorTwitter', related_name='geotwitters'),
+            field=models.ForeignKey(to='twitter_stream_api.MonitorTwitter', related_name='geotwitters'),
         ),
     ]

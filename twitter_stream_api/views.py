@@ -5,8 +5,8 @@ from rest_framework import permissions
 from rest_framework_jwt.authentication import JSONWebTokenAuthentication
 from stream.settings import AUTH_USER_MODEL
 
-from twitter_stream_rest.Serializers import MonitorTwitterSerializer, AccountTwitterSerializer, GeoTwitterSerializer
-from twitter_stream_rest.models import MonitorTwitter, AccountTwitter, GeoTwitter
+from twitter_stream_api.serializers import MonitorTwitterSerializer, AccountTwitterSerializer, GeoTwitterSerializer
+from twitter_stream_api.models import MonitorTwitter, AccountTwitter, GeoTwitter
 
 
 # Create your vie ws here
