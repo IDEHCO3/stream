@@ -76,7 +76,8 @@ class MonitorTwitterDetail(generics.RetrieveUpdateDestroyAPIView):
 
     permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
     #authentication_classes = (JSONWebTokenAuthentication, )
-
+    lookup_field = 'name'
+    lookup_url_kwarg = 'monitor_name'
 
 class GeoTwitterListFiltered(generics.ListAPIView):
 

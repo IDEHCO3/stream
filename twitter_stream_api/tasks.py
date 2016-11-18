@@ -13,7 +13,8 @@ logger = get_task_logger(__name__)
 def monitor_twitter():
 
     a_date_time_now = datetime.datetime.now()
-    all_MonitorTwitter= MonitorTwitter.objects.filter(initial_date__lte=a_date_time_now , final_date__gte=a_date_time_now)
+    #all_MonitorTwitter= MonitorTwitter.objects.filter(initial_date__lte=a_date_time_now , final_date__gte=a_date_time_now)
+    all_MonitorTwitter= MonitorTwitter.objects.all()
 
     for monitor_twitter in all_MonitorTwitter:
         collect_twitters(monitor_twitter.id)

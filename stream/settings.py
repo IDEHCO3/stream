@@ -89,7 +89,7 @@ WSGI_APPLICATION = 'stream.wsgi.application'
 
 if not 'IP_SGBD' in os.environ:
     os.environ['IP_SGBD'] = '172.17.0.1'
-    os.environ['DATABASE_NAME'] = 'idehco3'
+    os.environ['DATABASE_NAME'] = 'postgres'
     os.environ['USER_NAME_DATABASE'] = 'idehco3'
     os.environ['PASSWORD_DATABASE'] = 'idehco3'
 
@@ -103,10 +103,10 @@ password_database = os.environ['PASSWORD_DATABASE']
 DATABASES = {
     'default': {
          'ENGINE': 'django.contrib.gis.db.backends.postgis',
-         'HOST': '172.17.0.2',
-         'NAME': database_name,
-         'USER': user_name_database,
-         'PASSWORD': password_database
+         'HOST': '172.17.0.1',
+         'NAME': 'postgres',
+         'USER': 'postgres',
+         'PASSWORD': 'idehco3'
      }
 }
 

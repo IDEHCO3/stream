@@ -51,7 +51,6 @@ class MonitorTwitter(models.Model):
         self.access_token = a_access_token
 
 
-
 class GeoTwitter(models.Model):
 
     monitor_twitter = models.ForeignKey(MonitorTwitter, related_name='geotwitters' )
