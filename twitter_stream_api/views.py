@@ -11,6 +11,8 @@ from twitter_stream_api.models import MonitorTwitter, AccountTwitter, GeoTwitter
 
 # Create your vie ws here
 #
+from twitter_stream_api.utils import HandleFunctionsList
+
 
 class AccountTwitterListFiltered(generics.ListCreateAPIView):
 
@@ -79,11 +81,12 @@ class MonitorTwitterDetail(generics.RetrieveUpdateDestroyAPIView):
     lookup_field = 'name'
     lookup_url_kwarg = 'monitor_name'
 
-class GeoTwitterListFiltered(generics.ListAPIView):
+class GeoTwitterListFiltered(HandleFunctionsList):
 
     queryset = GeoTwitter.objects.all()
     serializer_class = GeoTwitterSerializer
     permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
+    contextclassname = 'geotwitters'
 
     def get_queryset(self):
 

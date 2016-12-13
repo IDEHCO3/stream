@@ -23,3 +23,10 @@ class GeoTwitterSerializer(GeoFeatureModelSerializer):
         model = GeoTwitter
         geo_field = 'geom'
         fields = ['monitor_twitter', 'twitter_id', 'twitter_text',  'sender_id', 'sender_screen_name', 'sender_name', 'sender_avatar', 'created_on']
+
+serializers_dict = {
+    'geotwitters': {
+        'name': 'geotwitters',
+        'serializer': GeoTwitterSerializer
+    }
+}

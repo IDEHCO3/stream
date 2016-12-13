@@ -49,6 +49,8 @@ INSTALLED_APPS = (
     'rest_framework_gis',
     'twitter_stream_api',
     'twitter_stream_view',
+    'context_api',
+    'hydra',
 )
 
 MIDDLEWARE_CLASSES = (
