@@ -1,0 +1,22 @@
+#config files
+.idea/*
+
+#cache files
+.cache/*
+
+#compiled files
+*.pyc
+
+#temp files
+*~
+
+#migrations
+*/migrations/*
+
+#static
+static_root/*
+
+celerybeat.pid
+celerybeat-schedule
+dump.rdb
+

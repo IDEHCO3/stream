@@ -14,17 +14,15 @@ Including another URLconf
     2. Add a URL to urlpatterns:  url(r'^blog/', include(blog_urls))
 """
 from django.conf.urls import include, url
-from django.contrib import admin
 from hydra.urls import getHydraVocabURLPatterns
 
 urlpatterns = [
-    url(r'^admin/', include(admin.site.urls)),
-    url(r'^streams/twitter/', include('twitter_stream_api.urls', namespace='twitter_stream_api')),
-    url(r'^view/streams/twitter/', include('twitter_stream_view.urls', namespace='twitter_stream_view')),
-    url(r'^streams/twitter/contexts/', include('context_api.urls', namespace='context')),
+    url(r'^stream/twitter/', include('twitter_stream_api.urls', namespace='twitter_stream_api')),
+    url(r'^stream/view/streams/twitter/', include('twitter_stream_view.urls', namespace='twitter_stream_view')),
+    url(r'^stream/twitter/contexts/', include('context_api.urls', namespace='context')),
     getHydraVocabURLPatterns(r'^streams/twitter/hydra/'),
 ]
 
-urlpatterns += [
-    url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
-]
+# urlpatterns += [
+#     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+# ]

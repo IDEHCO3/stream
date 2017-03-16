@@ -22,16 +22,18 @@ STATICFILES_DIRS = [
 ]
 
 
+STATIC_ROOT = os.path.join(BASE_DIR, "static_root/")
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'ya!mb@n+w#wuy@a%7_#aooe_#^46xdjmm)*$hwjlxwf+53&bd%'
+SECRET_KEY = 'c(389qsh!zp=boq_^3#y-)^cbyq$t2ts=h#tu3^-tns-)6o+a8'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -67,6 +69,8 @@ MIDDLEWARE_CLASSES = (
 
 ROOT_URLCONF = 'stream.urls'
 
+CORS_ORIGIN_ALLOW_ALL = True
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -90,9 +94,15 @@ WSGI_APPLICATION = 'stream.wsgi.application'
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
 
 if not 'IP_SGBD' in os.environ:
-    os.environ['IP_SGBD'] = '172.17.0.1'
+    os.environ['IP_SGBD'] = '172.17.0.2'
+
+if not 'DATABASE_NAME' in os.environ:
     os.environ['DATABASE_NAME'] = 'postgres'
+
+if not 'USER_NAME_DATABASE' in os.environ:
     os.environ['USER_NAME_DATABASE'] = 'idehco3'
+
+if not 'PASSWORD_DATABASE' in os.environ:
     os.environ['PASSWORD_DATABASE'] = 'idehco3'
 
 # Database
@@ -105,10 +115,10 @@ password_database = os.environ['PASSWORD_DATABASE']
 DATABASES = {
     'default': {
          'ENGINE': 'django.contrib.gis.db.backends.postgis',
-         'HOST': '172.17.0.1',
-         'NAME': 'postgres',
-         'USER': 'postgres',
-         'PASSWORD': 'idehco3'
+         'HOST': ip_sgbd,
+         'NAME': database_name,
+         'USER': user_name_database,
+         'PASSWORD': password_database
      }
 }
 
@@ -132,7 +142,7 @@ CORS_ORIGIN_ALLOW_ALL = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
-STATIC_URL = '/static/'
+STATIC_URL = '/stream/static/'
 
 
 
