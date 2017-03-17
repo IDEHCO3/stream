@@ -20,7 +20,7 @@ urlpatterns = [
     url(r'^stream/twitter/', include('twitter_stream_api.urls', namespace='twitter_stream_api')),
     url(r'^stream/view/streams/twitter/', include('twitter_stream_view.urls', namespace='twitter_stream_view')),
     url(r'^stream/twitter/contexts/', include('context_api.urls', namespace='context')),
-    getHydraVocabURLPatterns(r'^streams/twitter/hydra/'),
+    getHydraVocabURLPatterns(r'^stream/twitter/hydra/'),
 ]
 
 # urlpatterns += [
