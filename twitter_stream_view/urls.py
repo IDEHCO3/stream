@@ -7,7 +7,7 @@ from twitter_stream_view.views import MonitorTwitterView
 
 urlpatterns = format_suffix_patterns([
 
-    url(r'^monitors-twitters/$', MonitorTwitterView.as_view(), name='monitors-twitters-view'),
+    url(r'^monitors-twitters/?$', MonitorTwitterView.as_view(), name='monitors-twitters-view'),
 
 
 ])

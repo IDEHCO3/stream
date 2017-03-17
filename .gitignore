@@ -16,7 +16,13 @@
 #static
 static_root/*
 
+#nginx
+nginx/*
+
+#some temp file
 celerybeat.pid
 celerybeat-schedule
 dump.rdb
+beat
+worker
 
